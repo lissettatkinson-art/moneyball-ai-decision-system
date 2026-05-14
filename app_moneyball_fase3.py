@@ -534,6 +534,12 @@ with tab2:
         unsafe_allow_html=True
     )
 
+    decision_class = "warning-box"
+    decision = "Sin evaluación"
+    score = 0
+    nivel_riesgo = "No calculado"
+    criterios = []
+
     if evaluar:
         nuevo_jugador = pd.DataFrame([{
             "age": age,
@@ -710,7 +716,7 @@ with tab2:
         box_class = "success-box" if resultado["business_decision"] == "Fichar" else "warning-box" if resultado["business_decision"] == "Monitorear" else "danger-box"
         
         st.markdown(f"""
-        <div class="{decision_class}">
+        <div class="success-box">
             Recomendación del motor de decisión: {decision}<br>
             Puntaje estratégico: {score}/100<br>
             Nivel de riesgo: {nivel_riesgo}
